@@ -13,10 +13,8 @@ class BookService:
     def list_books_with_more_authors(self):
         books = self.book_fetcher_service.get_books()
         for item in books:
-            if item['author']['lastname'] and item['author']['firstname']:
-                return list(set(map(lambda book: item['author']['lastname'] + ' ' + item['author']['firstname'], books)))
+            if item['authors'][{'lastname'}] and item['authors'][{'firstname'}]:
+                list(set(map(lambda book: item['authors']['lastname'] + ' ' + item['authors']['firstname'] + ' & ' +
+                                          item['authors']['lastname'] + ' ' + item['authors']['firstname'], books)))
             else:
-                return list(set(map(lambda book: item['author']['lastname1'] + ' ' +
-                                                 item['author']['firstname1'] + ' & ' +
-                                                 item['author']['lastname2'] + ' ' +
-                                                 item['author']['firstname2'], books)))
+                list(set(map(lambda book: item['author']['lastname'] + ' ' + item['author']['firstname'], books)))

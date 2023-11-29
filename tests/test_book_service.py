@@ -53,7 +53,7 @@ def test_list_authors_without_firstname(monkeypatch):
     book_service = BookService(book_fetcher_service=BookFetcherService())
     authors = book_service.list_books_authors()
 
-    assert collections.Counter(authors) != collections.Counter(['Brown Dan', 'Johnson Michael', 'Johnson'])
+    assert collections.Counter(authors) == collections.Counter(['Brown Dan', 'Johnson Michael', 'Johnson '])
 
 
 def test_list_without_books(monkeypatch):
@@ -77,8 +77,8 @@ def test_list_books_with_multi_authors(monkeypatch):
         return [
             {'id': 'aaa-001', 'name': 'Origine', 'author': {'firstname': 'Dan', 'lastname': 'Brown'}},
             {'id': 'aaa-002', 'name': 'Anges & Démons', 'author': {'firstname': 'Dan', 'lastname': 'Brown'}},
-            {'id': 'aaa-003', 'name': 'Paradis ou Enfer', 'author': {'firstname1': 'Michael', 'lastname1': 'Johnson',
-                                                                     'firstname2': 'Stephen', 'lastname2': 'Thomson'}
+            {'id': 'aaa-003', 'name': 'Paradis ou Enfer', 'authors': [{'firstname': 'Michael', 'lastname': 'Johnson'},
+                                                                      {'firstname': 'Stephen', 'lastname': 'Thomson'}]
              },
         ]
 
