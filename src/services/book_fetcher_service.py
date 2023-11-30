@@ -2,6 +2,7 @@ import requests
 
 
 class BookFetcherService:
-    def get_books(self):
+    @staticmethod
+    def get_books():
         r = requests.get('http://localhost:1080/books')
         return r.json()

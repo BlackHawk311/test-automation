@@ -21,6 +21,14 @@
             "lastname": "Brown"
           },
           "name": "Inferno"
+        },
+        {
+          "id": "44c8580d-5f85-80f5-4d75-e16914442a5e",
+          "author": {
+            "firstname": "Dan",
+            "lastname": "Brown"
+          },
+          "name": "Inferno"
         }
       ]
     }
@@ -33,17 +41,17 @@
       "statusCode": 200,
       "body": [
         {
-          "id": 1,
+          "id": "1",
           "pseudo": "azerty",
           "email": "azerty@mail.fr"
         },
         {
-          "id": 2,
+          "id": "2",
           "pseudo": "qwerty",
           "email": "qwerty@mail.fr"
         },
         {
-          "id": 3,
+          "id": "3",
           "pseudo": "plerty",
           "email": "plerty@mail.fr"
         }
