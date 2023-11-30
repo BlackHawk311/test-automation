@@ -33,15 +33,18 @@
       "statusCode": 200,
       "body": [
         {
-          "id": "1",
+          "id": 1,
+          "pseudo": "azerty",
           "email": "azerty@mail.fr"
         },
         {
-          "id": "2",
+          "id": 2,
+          "pseudo": "qwerty",
           "email": "qwerty@mail.fr"
         },
         {
-          "id": "3",
+          "id": 3,
+          "pseudo": "plerty",
           "email": "plerty@mail.fr"
         }
       ]
