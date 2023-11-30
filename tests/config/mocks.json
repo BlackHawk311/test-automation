@@ -23,6 +23,26 @@
           "name": "Inferno"
         }
       ]
+    },
+    "httpRequest": {
+      "path": "/users"
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": [
+        {
+          "id": "1",
+          "email": "azerty@mail.fr"
+        },
+        {
+          "id": "2",
+          "email": "qwerty@mail.fr"
+        },
+        {
+          "id": "3",
+          "email": "plerty@mail.fr"
+        }
+      ]
     }
   }
 ]
