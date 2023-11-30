@@ -34,7 +34,7 @@ def test_user(monkeypatch):
 
     users = user_service.list_users()
 
-    assert collections.Counter[users] == collections.Counter[[
+    assert is_equal_unordered(users, [
         {
             'id': '1',
             'pseudo': 'Valentine',
@@ -45,7 +45,7 @@ def test_user(monkeypatch):
             'pseudo': 'Tristan',
             'email': 'trisan@mail.fr'
          }
-    ]]
+    ])
 
 
 def test_user_no_user(monkeypatch):

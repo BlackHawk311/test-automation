@@ -14,7 +14,7 @@ class BookService:
         books = self.book_fetcher_service.get_books()
         for item in books:
             if item['authors'][{'lastname'}] and item['authors'][{'firstname'}]:
-                list(set(map(lambda book: item['authors']['lastname'] + ' ' + item['authors']['firstname'] + ' & ' +
-                                          item['authors']['lastname'] + ' ' + item['authors']['firstname'], books)))
+                list(set(map(lambda book: item['authors'][{'lastname'}] + ' ' + item['authors'][{'firstname'}] + ' & ' +
+                                          item['authors'][{'lastname'}] + ' ' + item['authors'][{'firstname'}], books)))
             else:
                 list(set(map(lambda book: item['author']['lastname'] + ' ' + item['author']['firstname'], books)))
