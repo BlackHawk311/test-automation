@@ -17,5 +17,7 @@ jobs:
         run: python -c "import sys; print(sys.version)"
       - name: Install dependencies
         run: pip install --no-cache-dir -r requirements.txt
-      - name: Run tests
+      - name: Run static tests
+        run: ruff
+      - name: Run dynamic tests
         run: pytest
