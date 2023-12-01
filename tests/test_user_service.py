@@ -1,16 +1,6 @@
-import collections
-import numpy as n
-
 from src.services.user_fetcher_service import UserFetcherService
 from src.services.user_service import UserService
-from typing import Any
-
-
-def is_equal_unordered(value_a: [Any], value_b: [Any]):
-    narr1 = n.array([value_a])
-    narr2 = n.array([value_b])
-
-    return (narr1 == narr2).all()
+from Utilities.utility import is_equal_unordered
 
 
 def test_user(monkeypatch):
@@ -43,7 +33,7 @@ def test_user(monkeypatch):
         {
             'id': '2',
             'pseudo': 'Tristan',
-            'email': 'trisan@mail.fr'
+            'email': 'tristan@mail.fr'
          }
     ])
 

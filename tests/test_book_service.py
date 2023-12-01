@@ -1,6 +1,7 @@
 import collections
 from src.services.book_fetcher_service import BookFetcherService
 from src.services.book_service import BookService
+from Utilities.utility import is_equal_unordered
 
 
 def test_list_book_ids(monkeypatch):
@@ -17,7 +18,7 @@ def test_list_book_ids(monkeypatch):
     book_service = BookService(book_fetcher_service=BookFetcherService())
     ids = book_service.list_books_ids()
 
-    assert ids == ['aaa-001', 'aaa-002']
+    assert is_equal_unordered(ids, ['aaa-001', 'aaa-002'])
 
 
 def test_list_authors(monkeypatch):
@@ -68,7 +69,7 @@ def test_list_without_books(monkeypatch):
 
 #    assert books == []
 
-    assert collections.Counter(books) == collections.Counter([])
+    assert is_equal_unordered(books, [])
 
 
 def test_list_books_with_multi_authors(monkeypatch):
@@ -87,5 +88,5 @@ def test_list_books_with_multi_authors(monkeypatch):
     book_service = BookService(book_fetcher_service=BookFetcherService())
     authors = book_service.list_books_with_more_authors()
 
-    assert collections.Counter(authors) == collections.Counter(['Brown Dan', 'Johnson Michael & Thomson Stephen'])
+    assert is_equal_unordered(authors, ['Brown Dan', 'Johnson Michael & Thomson Stephen'])
 
