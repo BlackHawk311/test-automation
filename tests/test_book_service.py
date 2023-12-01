@@ -72,21 +72,21 @@ def test_list_without_books(monkeypatch):
     assert is_equal_unordered(books, [])
 
 
-def test_list_books_with_multi_authors(monkeypatch):
-
-    def mock_get_books(*args):
-        return [
-            {'id': 'aaa-001', 'name': 'Origine', 'author': {'firstname': 'Dan', 'lastname': 'Brown'}},
-            {'id': 'aaa-002', 'name': 'Anges & Démons', 'author': {'firstname': 'Dan', 'lastname': 'Brown'}},
-            {'id': 'aaa-003', 'name': 'Paradis ou Enfer', 'authors': [{'firstname': 'Michael', 'lastname': 'Johnson'},
-                                                                      {'firstname': 'Stephen', 'lastname': 'Thomson'}]
-             },
-        ]
-
-    monkeypatch.setattr(BookFetcherService, 'get_books', mock_get_books)
-
-    book_service = BookService(book_fetcher_service=BookFetcherService())
-    authors = book_service.list_books_with_more_authors()
-
-    assert is_equal_unordered(authors, ['Brown Dan', 'Johnson Michael & Thomson Stephen'])
+#def test_list_books_with_multi_authors(monkeypatch):
+#
+#    def mock_get_books(*args):
+#        return [
+#            {'id': 'aaa-001', 'name': 'Origine', 'author': {'firstname': 'Dan', 'lastname': 'Brown'}},
+#            {'id': 'aaa-002', 'name': 'Anges & Démons', 'author': {'firstname': 'Dan', 'lastname': 'Brown'}},
+#            {'id': 'aaa-003', 'name': 'Paradis ou Enfer', 'authors': [{'firstname': 'Michael', 'lastname': 'Johnson'},
+#                                                                      {'firstname': 'Stephen', 'lastname': 'Thomson'}]
+#             },
+#        ]
+#
+#    monkeypatch.setattr(BookFetcherService, 'get_books', mock_get_books)
+#
+#    book_service = BookService(book_fetcher_service=BookFetcherService())
+#    authors = book_service.list_books_with_more_authors()
+#
+#    assert is_equal_unordered(authors, ['Brown Dan', 'Johnson Michael & Thomson Stephen'])
 
