@@ -15,10 +15,14 @@ jobs:
           python-version: '3.12'
       - name: Python version
         run: python -c "import sys; print(sys.version)"
-      - name: Install dependencies
-        run: pip install --no-cache-dir -r requirements.txt
-      - name: Lint with Ruff
-        run: ruff --output-format=github .
-        continue-on-error: true
-      - name: Run Pytest
-        run: pytest
+      - name: Set and Run Docker
+        run: docker build -t test-docker . && docker run -it test-docker
+#      - name: Install dependencies
+#        run: pip install --no-cache-dir -r requirements.txt
+#      - name: Lint with Ruff
+#        run: ruff --output-format=github .
+#        continue-on-error: true
+#      - name: Run Pytest
+#        run: pytest
+
+
