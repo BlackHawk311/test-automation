@@ -39,4 +39,3 @@ def truncate(value: str, n_char: int) -> str:
         return value
 
     return value[:n_char] + '...'
-

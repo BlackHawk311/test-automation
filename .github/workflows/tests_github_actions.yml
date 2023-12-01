@@ -20,5 +20,5 @@ jobs:
       - name: Lint with Ruff
         run: ruff --output-format=github .
         continue-on-error: true
-      - name: Run tests
+      - name: Run Pytest
         run: pytest
