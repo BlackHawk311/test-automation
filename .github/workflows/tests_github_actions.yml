@@ -17,5 +17,7 @@ jobs:
         run: python -c "import sys; print(sys.version)"
       - name: Install dependencies
         run: pip install --no-cache-dir -r requirements.txt
+      - name: Lint with Ruff
+        run: ruff
       - name: Run tests
-        run: ruff, pytest
+        run: pytest
