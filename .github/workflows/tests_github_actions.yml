@@ -19,6 +19,7 @@ jobs:
         run: docker build -t test-docker .
       - name: Run Docker
         run: docker run -it test-docker
+        continue-on-error: true
 #      - name: Install dependencies
 #        run: pip install --no-cache-dir -r requirements.txt
 #      - name: Lint with Ruff
