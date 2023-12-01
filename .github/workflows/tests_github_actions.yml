@@ -18,6 +18,6 @@ jobs:
       - name: Install dependencies
         run: pip install --no-cache-dir -r requirements.txt
       - name: Lint with Ruff
-        run: ruff
+        run: ruff --output-format=github .
       - name: Run tests
         run: pytest
