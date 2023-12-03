@@ -8,5 +8,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-ENTRYPOINT ["/run-test.sh"]
+CMD ["sh /run-test.sh"]
 

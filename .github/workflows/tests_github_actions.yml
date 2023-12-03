@@ -19,8 +19,6 @@ jobs:
         run: docker build -t test-docker .
       - name: Run Docker
         run: docker run test-docker
-      - name: Run tests
-        run: sh /run-test.sh
         continue-on-error: true
 #      - name: Install dependencies
 #        run: pip install --no-cache-dir -r requirements.txt
