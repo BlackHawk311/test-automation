@@ -19,11 +19,8 @@ jobs:
         run: docker build -t test-docker .
       - name: Run Docker
         run: docker run test-docker
-      - name: Lint with Ruff
-        run: sh ruff --output-format
-        continue-on-error: true
-      - name: Run Pytest
-        run: sh pytest
+      - name: Run tests
+        run: sh /run-test.sh
         continue-on-error: true
 #      - name: Install dependencies
 #        run: pip install --no-cache-dir -r requirements.txt
