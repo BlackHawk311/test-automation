@@ -20,10 +20,10 @@ jobs:
       - name: Run Docker
         run: docker run test-docker
       - name: Lint with Ruff
-        run: python ruff --output-format=github .
+        run: python3 ruff --output-format=github .
         continue-on-error: true
       - name: Run Pytest
-        run: python pytest
+        run: python3 pytest
         continue-on-error: true
 #      - name: Install dependencies
 #        run: pip install --no-cache-dir -r requirements.txt
