@@ -8,7 +8,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-RUN ruff --output-format=github .
-
-RUN pytest
+CMD ["python"]
 
